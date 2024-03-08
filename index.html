@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Form</title>
+</head>
+<body>
+  <h1>Contact Form</h1>
+  <form id="myForm" action="submit" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br><br>
+    <label for="message">Message:</label>
+    <textarea id="message" name="message"></textarea><br><br>
+    <input type="submit" value="Send">
+  </form>
+  <script>
+    // Get the form element
+    var form = document.getElementById("myForm");
+
+    // Add an event listener to the form's submit event
+    form.addEventListener("submit", function(event) {
+      // Prevent the form from submitting normally
+      event.preventDefault();
+
+      // Get the user's name, email, and message
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var message = document.getElementById("message").value;
+
+      // Send the email
+      var emailAddress = "titinpo@haren.uk";
+      var emailBody = "Name: " + name + "\nEmail: " + email + "\nMessage: " + message;
+      window.open("mailto:?subject=New%20Message&body=" + emailBody + "&to=" + emailAddress, "_self");
+    });
+  </script>
+</body>
+</html>
